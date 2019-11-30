@@ -1,0 +1,29 @@
+<mat-card id="login_card">
+  <mat-card-title>
+    The Secure <mat-icon id="secure_icon" aria-label="Cancel">fingerprint</mat-icon>
+    <div id="secure_info">
+      Welcom to the most secure social network in the world!
+    </div>
+  </mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit()">
+      <mat-form-field>
+        <input matInput formControlName="username" placeholder="Login">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput type="password" formControlName="password" placeholder="Password">
+      </mat-form-field>
+      <br>
+      <mat-list *ngIf="errors">
+        <mat-list-item class="login_error" *ngFor="let error of errors;">
+          {{error}}
+        </mat-list-item>
+      </mat-list>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" [disabled]="!loginForm.valid">Login</button>
+      </mat-card-actions>
+    </form>
+    <button (click)="goToRegistration()" mat-button color="primary">Sign up?</button>
+  </mat-card-content>
+</mat-card>

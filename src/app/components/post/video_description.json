@@ -1,0 +1,67 @@
+{
+ "kind": "youtube#videoListResponse",
+ "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/L5jYsd--UGjPTEc3sHdJ4wgBFHI\"",
+ "pageInfo": {
+  "totalResults": 1,
+  "resultsPerPage": 1
+ },
+ "items": [
+  {
+   "kind": "youtube#video",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/LwBwp0563zjGt3rXor4VHNZVqjA\"",
+   "id": "FyzgYbpGrp8",
+   "snippet": {
+    "publishedAt": "2019-04-27T13:07:24.000Z",
+    "channelId": "UCWnNKC1wrH_NXAXc5bhbFnA",
+    "title": "Мизулина и кровавые видеоигры, запрет Mortal Kombat 11 на Украине | Опергеймер",
+    "description": "Срочно спасти кабана: https://oper.ru/follow/savekoch\nРазберись с соседями по лестничной площадке: https://oper.ru/follow/tld2\n\nВ этом выпуске:\n- фривольный клон Mass Effect собрал $1,5 млн;\n- Мастер Чиф оказался рыжим;\n- Days Gone и Last of Us 2\n\nАудиоверсия: https://oper.ru/video/audio/opergamer_savekoch.mp3\n\nСайт Тупичок Гоблина: https://oper.ru\nКанал в Telegram: https://t.me/oper_goblin\nГоблин в Twitter: https://twitter.com/goblin_oper\nГоблин Вконтакте: https://vk.com/goblin\nГоблин в Instagram: https://www.instagram.com/goblin_oper/\nГоблин в Facebook: https://goo.gl/GK13pD\nГруппа Вконтакте: https://vk.com/goblin_oper_ru",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/FyzgYbpGrp8/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/FyzgYbpGrp8/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/FyzgYbpGrp8/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/FyzgYbpGrp8/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/FyzgYbpGrp8/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Dmitry Puchkov",
+    "tags": [
+     "goblin",
+     "гоблин",
+     "дмитрий пучков",
+     "опергеймер",
+     "opergamer",
+     "игры",
+     "mortal kombat",
+     "save koch"
+    ],
+    "categoryId": "20",
+    "liveBroadcastContent": "none",
+    "defaultLanguage": "ru",
+    "localized": {
+     "title": "Мизулина и кровавые видеоигры, запрет Mortal Kombat 11 на Украине | Опергеймер",
+     "description": "Срочно спасти кабана: https://oper.ru/follow/savekoch\nРазберись с соседями по лестничной площадке: https://oper.ru/follow/tld2\n\nВ этом выпуске:\n- фривольный клон Mass Effect собрал $1,5 млн;\n- Мастер Чиф оказался рыжим;\n- Days Gone и Last of Us 2\n\nАудиоверсия: https://oper.ru/video/audio/opergamer_savekoch.mp3\n\nСайт Тупичок Гоблина: https://oper.ru\nКанал в Telegram: https://t.me/oper_goblin\nГоблин в Twitter: https://twitter.com/goblin_oper\nГоблин Вконтакте: https://vk.com/goblin\nГоблин в Instagram: https://www.instagram.com/goblin_oper/\nГоблин в Facebook: https://goo.gl/GK13pD\nГруппа Вконтакте: https://vk.com/goblin_oper_ru"
+    },
+    "defaultAudioLanguage": "ru"
+   }
+  }
+ ]
+}

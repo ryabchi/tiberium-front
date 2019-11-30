@@ -1,0 +1,31 @@
+<iframe *ngIf="videoUrl" class="youtube_iframe" [src]="videoUrl"></iframe>
+<mat-accordion *ngIf="description">
+  <mat-expansion-panel class="video_title_block">
+    <mat-expansion-panel-header class="video_title_header">
+      <mat-panel-title>
+        <b>{{description.title}}</b>
+      </mat-panel-title>
+      <mat-panel-description>
+        Открыть описание
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <p *ngIf="description">
+      {{description.description}}
+    </p>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<mat-card *ngFor="let comment of comments" class="comment_list">
+  <mat-card-header class="youtube_comment_block">
+    <img
+      mat-card-avatar
+      src="{{comment.authorProfileImageUrl}}"
+      alt="Avatar"
+    >
+    <mat-card-title>{{comment.authorDisplayName}}</mat-card-title>
+    <mat-card-subtitle>
+      <p class="e2e-inner-html-bound" [innerHTML]="comment.textOriginal"></p>
+    </mat-card-subtitle>
+  </mat-card-header>
+</mat-card>

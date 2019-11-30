@@ -1,0 +1,104 @@
+<mat-card class="post-card">
+
+  <mat-card-header *ngIf="postForm.value['id']">
+    <img mat-card-avatar src="/assets/{{postForm.value['creator_info'].id.charAt(0)}}.jpg"
+         alt="Photo of a Shiba Inu">
+    <mat-card-title>
+      <div (click)="goToUserProfile()" class="user_link">
+        {{postForm.value['creator_info'].name}}
+      </div>
+    </mat-card-title>
+    <mat-card-subtitle>{{postForm.value['created_at'] | date: 'dd.MM.yyyy HH.mm'}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-header *ngIf="!postForm.value['id']">
+    <mat-card-title class="new_post_tile">
+      Новый пост
+    </mat-card-title>
+    <button class="cancel_post_create" mat-icon-button color="basic" (click)="cancel()">
+      <mat-icon aria-label="Отменить">close</mat-icon>
+    </button>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form [formGroup]="postForm" (ngSubmit)="onFormSubmit()" *ngIf="!postForm.value['id']">
+
+      <mat-form-field class="post_type">
+        <mat-label>Post type</mat-label>
+        <mat-select formControlName="post_type">
+          <mat-option *ngFor="let post of postTypes" [value]="post.value">
+            {{post.label}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button
+        class="button_image"
+        [disabled]="!postForm.valid"
+        mat-icon-button color="primary">
+        <mat-icon aria-label="Сохранить">save</mat-icon>
+      </button>
+
+      <mat-form-field
+        class="post_text_field"
+        *ngIf="postForm.value['post_type'] != PostType.VIDEO"
+      >
+        <textarea
+          mat-autosize
+          matInput
+          class="post_text_textarea"
+          placeholder="What's news?"
+          formControlName="text"
+        ></textarea>
+      </mat-form-field>
+
+      <mat-form-field
+        *ngIf="postForm.value['post_type'] == PostType.VIDEO"
+        class="post_youtube_field"
+      >
+        <input matInput formControlName="youtube_link" placeholder="Youtube Video ID">
+      </mat-form-field>
+
+      <button class="button_image" mat-icon-button (click)="previewVideo()"
+              *ngIf="postForm.value['post_type'] == PostType.VIDEO">
+        <mat-icon aria-label="Prevision">search</mat-icon>
+      </button>
+
+      <div
+        class="post_content"
+        *ngIf="postForm.value['post_type'] == PostType.VIDEO"
+      >
+        <app-youtube-post
+          #youtubePost
+          [videoId]="postForm.value['youtube_link']"
+          [loadInfo]="youtubeLoadVideoInfo"
+        ></app-youtube-post>
+      </div>
+
+    </form>
+    <!--    конец формы-->
+    <div *ngIf="postForm.value['id']">
+      <div *ngIf="postForm.value['text']">{{postForm.value['text']}}</div>
+      <app-youtube-post
+        *ngIf="postForm.value['youtube_link']"
+        [videoId]="postForm.value['youtube_link']"
+      ></app-youtube-post>
+    </div>
+    <!--    конец отображения-->
+  </mat-card-content>
+  <mat-card-actions *ngIf="postForm.value.id">
+    <div class="like_card">
+
+      <button mat-icon-button color="primary" class="like_button" (click)="like()" *ngIf="postForm.value.liked_by_user">
+        <mat-icon aria-label="Like">favorite</mat-icon>
+        {{postForm.value.like_count}}
+      </button>
+
+      <button mat-icon-button color="basic" class="like_button" (click)="like()" *ngIf="!postForm.value.liked_by_user">
+        <mat-icon aria-label="Like">favorite</mat-icon>
+        {{postForm.value.like_count}}
+      </button>
+    </div>
+  </mat-card-actions>
+</mat-card>
+<br>

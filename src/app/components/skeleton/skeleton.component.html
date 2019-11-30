@@ -1,0 +1,15 @@
+<nav mat-tab-nav-bar mat-align-tabs="center" id="top_navigation">
+  <a mat-tab-link
+     *ngFor="let link of navLinks"
+     [routerLink]="link.url"
+     routerLinkActive #rla="routerLinkActive"
+     [routerLinkActiveOptions]="{exact:true}"
+     [active]="rla.isActive"
+     (click)="tryLogout(link.icon)"
+  >
+    <mat-icon class="tab-icon">{{link.icon}}</mat-icon>
+    {{link.label}}
+  </a>
+</nav>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,12 @@
+<div>
+  <mat-card class="new_post_card" (click)="createNewPost()" *ngIf="!showNewPost">
+    <mat-form-field class="what_news_field">
+      <input matInput placeholder="What's news?">
+    </mat-form-field>
+  </mat-card>
+  <div class="new_post_card">
+    <app-post *ngIf="showNewPost" (savedPost)="newPostCreated($event)"></app-post>
+  </div>
+  <br>
+  <app-post [postData]="post" *ngFor="let post of posts"></app-post>
+</div>

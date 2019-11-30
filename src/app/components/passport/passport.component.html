@@ -1,0 +1,66 @@
+<table class="main_table">
+  <tr>
+    <td class="content_block">
+    </td>
+    <td class="content_block">
+      <mat-card class="passport_service_info passport">
+        <mat-card-content>
+          Meet <strong>The Secure Passport</strong> – a unified storage method for services that require personal identification.
+          Upload your documents once, then instantly use and share your data with services that require real-world ID
+          (finance, ICOs, etc.).
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="passport">
+        <mat-card-header>
+          <mat-card-title>
+            New passport
+          </mat-card-title>
+          <button
+            [disabled]="!passportForm.valid"
+            class="save_passport"
+            mat-icon-button color="basic"
+            (click)="savePassport()">
+            <mat-icon aria-label="Сохранить">save</mat-icon>
+          </button>
+        </mat-card-header>
+
+        <mat-card-content>
+          <form [formGroup]="passportForm">
+
+            <mat-form-field>
+              <input matInput formControlName="name" placeholder="Name">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+              <textarea
+                mat-autosize
+                matInput
+                placeholder="Secret"
+                formControlName="secret"
+              ></textarea>
+            </mat-form-field>
+          </form>
+        </mat-card-content>
+      </mat-card>
+
+      <br>
+
+      <mat-card *ngFor="let passport of passports" class="passport">
+        <mat-card-header>
+          <mat-card-title class="passport_title">
+            <div class="passport_name bold">{{passport.name}}</div>
+            <div class="passport_create_data">{{passport.created_at | date: 'dd.MM.yyyy HH.mm'}}</div>
+          </mat-card-title>
+          <button class="passport_delete_button" mat-icon-button color="basic" (click)="deletePassport(passport.id)">
+            <mat-icon aria-label="Отменить">close</mat-icon>
+          </button>
+        </mat-card-header>
+        <mat-card-content>
+          {{passport.secret}}
+        </mat-card-content>
+      </mat-card>
+    </td>
+    <td class="content_block"></td>
+  </tr>
+</table>
+
