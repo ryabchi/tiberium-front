@@ -1,7 +1,7 @@
 <mat-card class="post-card">
 
   <mat-card-header *ngIf="postForm.value['id']">
-    <img mat-card-avatar src="/assets/{{postForm.value['creator_info'].id.charAt(0)}}.jpg"
+    <img mat-card-avatar src="https://via.placeholder.com/150/e6ecf0/3f51b5/?text={{postForm.value['creator_info'].name}}"
          alt="Photo of a Shiba Inu">
     <mat-card-title>
       <div (click)="goToUserProfile()" class="user_link">
