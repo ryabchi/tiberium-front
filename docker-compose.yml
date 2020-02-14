@@ -8,4 +8,4 @@ services:
       args:
         PROD_MODE: --prod
     ports:
-      - '${FRONT_PORT}:80'
+      - '80:80'
