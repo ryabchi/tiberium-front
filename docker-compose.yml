@@ -1,0 +1,11 @@
+version: '3.3'
+
+services:
+  front:
+    build:
+      context: .
+      dockerfile: deployment/Dockerfile
+      args:
+        PROD_MODE: --prod
+    ports:
+      - '${FRONT_PORT}:80'
